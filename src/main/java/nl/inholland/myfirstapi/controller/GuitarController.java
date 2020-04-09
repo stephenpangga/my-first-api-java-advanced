@@ -20,10 +20,24 @@ public class GuitarController {
 
     @Autowired
     private GuitarService service;
-
+    // url: localhost:8080/api/guitars/
     @RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Guitar>> getAllGuitars()
     {
+        return ResponseEntity.status(200).body(service.getAllGuitars());
+    }
+    // url: localhost:8080/api/guitars/all
+    @RequestMapping(value = "all", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Guitar>> all()
+    {
         return ResponseEntity.status(404).body(service.getAllGuitars());
     }
+
+    /*
+    @RequestMapping(value = "{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Guitar>> getPerId()
+    {
+        return service.getId(long id);
+    }
+    */
 }
