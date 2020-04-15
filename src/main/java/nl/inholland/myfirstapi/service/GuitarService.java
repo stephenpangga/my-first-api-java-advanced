@@ -17,7 +17,6 @@ public class GuitarService {
                 new Guitar(1L, "Fender", "Telecaster", 899.0),
                 new Guitar(2L, "Fender", "Stratocaster", 1299.0),
                 new Guitar(3L, "Fender", "Thunderbird", 2999.0)
-
         );
     }
 
