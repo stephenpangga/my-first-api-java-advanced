@@ -9,7 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import java.util.Collections;
 import java.util.List;
 
 @Controller
@@ -40,4 +42,10 @@ public class GuitarController {
         return service.getId(long id);
     }
     */
+    @RequestMapping(value = "arrange", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Guitar>> organizeGuitarsbyPrice()
+    {
+        return ResponseEntity.status(200).body(service.organizeGuitarbyPrice());
+    }
+
 }
